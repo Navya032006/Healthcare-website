@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WellSpring Health - Find Your Doctor</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="doctors.css">
+</head>
+<body>
+  <img class="bg" src="hero.png" alt="Healthcare Background" />
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Pure Health</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item">
+            <a class="nav-link" href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="hospital.php">Hospitals</a>
+          </li>
+          <li class="nav-item"><a class="nav-link active" href="doctors.html">Doctors</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-sign-in me-2" href="signup.html">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-appointment me-2" href="login.html">Login</a>
+          </li>
+          <li class="nav-item logout-item">
+            <a class="btn btn-sign-in me-2" href="logout.php" >Logout</a>
+        </li>
+          <li class="nav-item">
+            <a class="btn btn-appointment" href="appointment.html">Book Appointment</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <h1>Find Your Perfect Doctor</h1>
+    <p class="mt-3 fs-5">
+      Connect with top specialists committed to providing exceptional care
+    </p>
+  </div>
+
+  <div class="container filter-bar">
+    <div class="doctor-search">
+      <i class="fas fa-search search-icon"></i>
+      <input type="text" class="search-input" placeholder="Search for doctors by name, specialty, or hospital...">
+    </div>
+    <div class="row g-3 align-items-end">
+      <div class="col-md-3">
+        <label for="location" class="form-label">Location</label>
+        <select id="location" class="form-select">
+          <option>All Locations</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <label for="specialty" class="form-label">Specialty</label>
+        <select id="specialty" class="form-select">
+          <option>All Specialties</option>
+          <option>Cardiology</option>
+          <option>Neurology</option>
+          <option>Orthopedics</option>
+          <option>Pediatrics</option>
+          <option>Oncology</option>
+          <option>General Medicine</option>
+          <option>Dermatology</option>
+          <option>Gynecology</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <label for="hospital" class="form-label">Hospital</label>
+        <select id="hospital" class="form-select">
+          <option>All Hospitals</option>
+          <option>City Heart Hospital</option>
+          <option>Greenlife Multi-Specialty</option>
+          <option>Sunshine Children's Hospital</option>
+          <option>Metro General Hospital</option>
+          <option>Hope Cancer Institute</option>
+          <option>Joint & Spine Care Center</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <label for="availability" class="form-label">Availability</label>
+        <select id="availability" class="form-select">
+          <option>Any Day</option>
+          <option>Today</option>
+          <option>Tomorrow</option>
+          <option>This Week</option>
+          <option>Next Week</option>
+        </select>
+      </div>
+    </div>
+    <div class="text-center mt-4">
+      <button class="btn btn-primary px-5">
+        <i class="fas fa-filter me-2"></i>Filter Results
+      </button>
+    </div>
+  </div>
+
+  <div class="container mb-5">
+   
+    <div class="hospital-filter">
+      <div class="hospital-pill active">All Hospitals</div>
+      <div class="hospital-pill">City Heart Hospital</div>
+      <div class="hospital-pill">Greenlife Multi-Specialty</div>
+      <div class="hospital-pill">Hope Cancer Institute</div>
+      <div class="hospital-pill">Joint & Spine Care Center</div>
+      <div class="hospital-pill">Metro General Hospital</div>
+      <div class="hospital-pill">Sunshine Children's Hospital</div>
+    </div>
+
+      <div class="col-md-4" >
+            </div>
+          </div>
+</div>  
+<footer class="bg-primary text-white py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <h5>WellSpring Health Care</h5>
+          <p>Innovative healthcare solutions</p>
+        </div>
+        <div class="col-md-3">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="home.html" class="text-white">Home</a></li>
+            <li><a href="hospital.php" class="text-white">Hospitals</a></li>
+            <li><a href="doctors.html" class="text-white">Doctors</a></li>
+            <li><a href="about.html" class="text-white">About Us</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>Contact Us</h5>
+          <p>123 Healthcare Street<br />Wellness City</p>
+          <p>Phone: (555) 123-4567</p>
+        </div>
+        <div class="col-md-3">
+          <h5>Follow Us</h5>
+          <div class="social-icons">
+            <a href="#" class="text-white me-2"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="#" class="text-white me-2"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="#" class="text-white"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+<script src="doctors.js"></script>
+</body></html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book an Appointment - Health Care</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="appointment.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Pure Health</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item">
+            <a class="nav-link" href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="hospital.php">Hospitals</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="doctors.html">Doctors</a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-sign-in me-2" href="signup.html">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-appointment me-2" href="login.html">Login</a>
+          </li>
+          <li class="nav-item logout-item">
+            <a class="btn btn-sign-in me-2" href="logout.php" >Logout</a>
+        </li>
+          <li class="nav-item">
+            <a class="btn btn-appointment active" style="background-color: var(--primary-blue);" href="appointment.html">Book Appointment</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <header class="appointment-header">
+    <div class="appointment-overlay animate-fade-in">
+      <h1>Book Your Appointment</h1>
+      <p>Schedule a consultation with our qualified healthcare professionals</p>
+    </div>
+  </header>
+
+  <section class="container appointment-form-section">
+    <div class="appointment-form-container">
+      <div class="step-indicator">
+        <div class="step active" data-step="1">
+          <div class="step-connector"></div>
+          <div class="step-number">1</div>
+          <div class="step-title">Patient Details</div>
+        </div>
+        <div class="step" data-step="2">
+          <div class="step-connector"></div>
+          <div class="step-number">2</div>
+          <div class="step-title">Select Specialty</div>
+        </div>
+        <div class="step" data-step="3">
+          <div class="step-connector"></div>
+          <div class="step-number">3</div>
+          <div class="step-title">Choose Doctor</div>
+        </div>
+        <div class="step" data-step="4">
+          <div class="step-connector"></div>
+          <div class="step-number">4</div>
+          <div class="step-title">Pick Date & Time</div>
+        </div>
+        <div class="step" data-step="5">
+          <div class="step-connector"></div>
+          <div class="step-number">5</div>
+          <div class="step-title">Confirmation</div>
+        </div>
+      </div>
+      <div class="appointment-step active" id="step1">
+        <h2>Patient Information</h2>
+        <form id="patientForm">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="firstName" class="form-label">First Name</label>
+              <input type="text" class="form-control" id="firstName" required>
+            </div>
+            <div class="col-md-6">
+              <label for="lastName" class="form-label">Last Name</label>
+              <input type="text" class="form-control" id="lastName" required>
+            </div>
+            <div class="col-md-6">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="col-md-6">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="tel" class="form-control" id="phone" required>
+            </div>
+            <div class="col-md-6">
+              <label for="dob" class="form-label">Date of Birth</label>
+              <input type="date" class="form-control" id="dob" required>
+            </div>
+            <div class="col-md-6">
+              <label for="gender" class="form-label">Gender</label>
+              <select class="form-select" id="gender" required>
+                <option value="" selected disabled>Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label for="address" class="form-label">Address</label>
+              <input type="text" class="form-control" id="address" required>
+            </div>
+            <div class="col-md-6">
+              <label for="city" class="form-label">City</label>
+              <input type="text" class="form-control" id="city" required>
+            </div>
+            <div class="col-md-4">
+              <label for="state" class="form-label">State</label>
+              <input type="text" class="form-control" id="state" required>
+            </div>
+            <div class="col-md-2">
+              <label for="zip" class="form-label">Zip Code</label>
+              <input type="text" class="form-control" id="zip" required>
+            </div>
+          </div>
+          <div class="d-flex justify-content-end mt-4">
+            <button type="button" class="btn btn-next" onclick="nextStep(1)">Next <i class="fas fa-arrow-right ms-2"></i></button>
+          </div>
+        </form>
+      </div>
+
+      <div class="appointment-step" id="step2">
+        <h2>Select Medical Specialty</h2>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="specialty-card text-center" data-specialty="Cardiology" onclick="selectSpecialty(this)">
+              <div class="specialty-icon">
+                <i class="fas fa-heartbeat"></i>
+              </div>
+              <h4>Cardiology</h4>
+              <p>Heart & Cardiovascular Care</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="specialty-card text-center" data-specialty="Neurology" onclick="selectSpecialty(this)">
+              <div class="specialty-icon">
+                <i class="fas fa-brain"></i>
+              </div>
+              <h4>Neurology</h4>
+              <p>Brain & Nervous System</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="specialty-card text-center" data-specialty="Orthopedics" onclick="selectSpecialty(this)">
+              <div class="specialty-icon">
+                <i class="fas fa-bone"></i>
+              </div>
+              <h4>Orthopedics</h4>
+              <p>Bone & Joint Care</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="specialty-card text-center" data-specialty="Pediatrics" onclick="selectSpecialty(this)">
+              <div class="specialty-icon">
+                <i class="fas fa-child"></i>
+              </div>
+              <h4>Pediatrics</h4>
+              <p>Child Healthcare</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="specialty-card text-center" data-specialty="Dermatology" onclick="selectSpecialty(this)">
+              <div class="specialty-icon">
+                <i class="fas fa-allergies"></i>
+              </div>
+              <h4>Dermatology</h4>
+              <p>Skin Care</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="specialty-card text-center" data-specialty="Ophthalmology" onclick="selectSpecialty(this)">
+              <div class="specialty-icon">
+                <i class="fas fa-eye"></i>
+              </div>
+              <h4>Ophthalmology</h4>
+              <p>Eye Care</p>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between mt-4">
+          <button type="button" class="btn btn-prev" onclick="prevStep(2)"><i class="fas fa-arrow-left me-2"></i> Previous</button>
+          <button type="button" class="btn btn-next" onclick="nextStep(2)">Next <i class="fas fa-arrow-right ms-2"></i></button>
+        </div>
+      </div>
+
+      <div class="appointment-step" id="step3">
+        <h2>Select Doctor</h2>
+        <div id="doctorList">
+          <div class="doctor-card" data-doctor="Dr. Anil Sharma" onclick="selectDoctor(this)">
+            <div class="doctor-image">
+              <img src="anil.png" alt="Dr. Anil Sharma">
+            </div>
+            <div class="doctor-info">
+              <div class="doctor-name">Dr. Anil Sharma</div>
+              <div class="doctor-specialty">Cardiology</div>
+              <div class="doctor-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="ms-1">4.5</span>
+              </div>
+              <div class="doctor-experience">15 years experience</div>
+            </div>
+          </div>
+          <div class="doctor-card" data-doctor="Dr. Ananya Mukherjee" onclick="selectDoctor(this)">
+            <div class="doctor-image">
+              <img src="ananya.png" alt="Dr. Ananya Mukherjee">
+            </div>
+            <div class="doctor-info">
+              <div class="doctor-name">Dr. Ananya Mukherjee</div>
+              <div class="doctor-specialty">Cardiology</div>
+              <div class="doctor-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span class="ms-1">5.0</span>
+              </div>
+              <div class="doctor-experience">12 years experience</div>
+            </div>
+          </div>
+          <div class="doctor-card" data-doctor="Dr. Sanjay Gupta" onclick="selectDoctor(this)">
+            <div class="doctor-image">
+              <img src="sanjay.png" alt="Dr. Sanjay Gupta">
+            </div>
+            <div class="doctor-info">
+              <div class="doctor-name">Dr. Sanjay Gupta</div>
+              <div class="doctor-specialty">Cardiology</div>
+              <div class="doctor-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span class="ms-1">4.0</span>
+              </div>
+              <div class="doctor-experience">8 years experience</div>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between mt-4">
+          <button type="button" class="btn btn-prev" onclick="prevStep(3)"><i class="fas fa-arrow-left me-2"></i> Previous</button>
+          <button type="button" class="btn btn-next" onclick="nextStep(3)">Next <i class="fas fa-arrow-right ms-2"></i></button>
+        </div>
+      </div>
+
+      <div class="appointment-step" id="step4">
+        <h2>Select Date & Time</h2>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label for="appointmentDate" class="form-label">Appointment Date</label>
+            <input type="date" class="form-control" id="appointmentDate" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Available Time Slots</label>
+            <div class="time-slots" id="timeSlots">
+              <div class="time-slot" data-time="09:00 AM" onclick="selectTimeSlot(this)">09:00 AM</div>
+              <div class="time-slot" data-time="10:00 AM" onclick="selectTimeSlot(this)">10:00 AM</div>
+              <div class="time-slot" data-time="11:00 AM" onclick="selectTimeSlot(this)">11:00 AM</div>
+              <div class="time-slot" data-time="01:00 PM" onclick="selectTimeSlot(this)">01:00 PM</div>
+              <div class="time-slot" data-time="02:00 PM" onclick="selectTimeSlot(this)">02:00 PM</div>
+              <div class="time-slot" data-time="03:00 PM" onclick="selectTimeSlot(this)">03:00 PM</div>
+              <div class="time-slot" data-time="04:00 PM" onclick="selectTimeSlot(this)">04:00 PM</div>
+            </div>
+          </div>
+          <div class="col-12 mt-4">
+            <label for="appointmentNotes" class="form-label">Additional Notes (Optional)</label>
+            <textarea class="form-control" id="appointmentNotes" rows="3" placeholder="Please describe your symptoms or any additional information..."></textarea>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between mt-4">
+          <button type="button" class="btn btn-prev" onclick="prevStep(4)"><i class="fas fa-arrow-left me-2"></i> Previous</button>
+          <button type="button" class="btn btn-next" onclick="nextStep(4)">Confirm Appointment <i class="fas fa-arrow-right ms-2"></i></button>
+        </div>
+      </div>
+
+      <div class="appointment-step" id="step5">
+        <div class="text-center mb-4">
+          <div class="confirmation-icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <h2>Appointment Confirmed!</h2>
+          <p>Your appointment has been scheduled successfully.</p>
+        </div>
+        
+        <div class="appointment-summary">
+          <h4 class="mb-3">Appointment Details</h4>
+          <div class="summary-item">
+            <div class="summary-label">Patient:</div>
+            <div class="summary-value" id="summaryName">John Doe</div>
+          </div>
+          <div class="summary-item">
+            <div class="summary-label">Doctor:</div>
+            <div class="summary-value" id="summaryDoctor">Dr. Sarah Johnson</div>
+          </div>
+          <div class="summary-item">
+            <div class="summary-label">Specialty:</div>
+            <div class="summary-value" id="summarySpecialty">Cardiology</div>
+          </div>
+          <div class="summary-item">
+            <div class="summary-label">Date:</div>
+            <div class="summary-value" id="summaryDate">June 10, 2023</div>
+          </div>
+          <div class="summary-item">
+            <div class="summary-label">Time:</div>
+            <div class="summary-value" id="summaryTime">09:00 AM</div>
+          </div>
+          <div class="summary-item">
+            <div class="summary-label">Location:</div>
+            <div class="summary-value">WellSpring Medical Center, 123 Healthcare Street</div>
+          </div>
+        </div>
+        
+        <div class="text-center mt-4">
+          <p>A confirmation email has been sent to <span id="summaryEmail">john.doe@example.com</span></p>
+          <div class="d-flex justify-content-center mt-3 gap-3">
+            <a href="home.html" class="btn btn-prev">Back to Home</a>
+            <button type="button" class="btn btn-next" onclick="printAppointment()">
+              <i class="fas fa-print me-2"></i> Print Details
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <h5>Health Care</h5>
+          <p>Innovative healthcare solutions</p>
+        </div>
+        <div class="col-md-3">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="hero.html">Home</a></li>
+            <li><a href="hospital.php">Hospitals</a></li>
+            <li><a href="doctors.html">Doctors</a></li>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>Contact Us</h5>
+          <p>123 Healthcare Street<br>Wellness City</p>
+          <p>Phone: (555) 123-4567</p>
+        </div>
+        <div class="col-md-3">
+          <h5>Follow Us</h5>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="appointment.js"></script>
+</body>
+</html>

@@ -1,0 +1,324 @@
+ body {
+  font-family: 'Inter', sans-serif;
+}
+.bg{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.4;
+  object-fit: cover;
+}
+:root {
+  --primary-blue: #2563eb;
+  --light-blue: #eff6ff;
+  --text-dark: #1e293b;
+  --gradient-blue: linear-gradient(135deg, #2563ef 0%, #4f46e5 100%);
+}
+
+.navbar {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--text-dark);
+}
+
+.navbar-nav {
+  align-items: center;
+}
+
+.navbar-nav .nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+  margin: 0 10px;
+}
+
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-blue);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.navbar-nav .nav-link.active {
+  color: var(--primary-blue);
+}
+
+/* Button Styles */
+.btn-appointment {
+  background: var(--primary-blue);
+  color: white !important;
+  border-radius: 50px;
+  padding: 10px 20px;
+  transition: transform 0.3s ease;
+}
+
+.btn-appointment:hover {
+  background: var(--primary-blue);
+  transform: translateY(-3px);
+}
+
+.btn-sign-in {
+  background: transparent;
+  color: var(--primary-blue) !important;
+  border: 2px solid var(--primary-blue);
+  border-radius: 50px;
+  padding: 8px 18px;
+  transition: all 0.3s ease;
+}
+.btn-sign-in:hover {
+  background: var(--primary-blue);
+  color: white !important;
+  transform: translateY(-3px);
+}
+.navbar {
+  position: sticky; 
+  top: 0; 
+  z-index: 100; 
+}
+
+.hero {
+  background: linear-gradient(rgba(58, 108, 245, 0.8));
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-weight: 700;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  margin-top: -50px; 
+  margin-bottom: 50px;
+  padding: 40px;
+}
+
+.section-heading {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 25px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.section-heading:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--primary-blue);
+}
+
+.about-intro {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4b5563;
+  margin-bottom: 30px;
+}
+
+.about-feature {
+  padding: 25px;
+  background: var(--light-blue);
+  border-radius: 15px;
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+}
+
+.about-feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.15);
+}
+
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-blue);
+  color: white;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.feature-title {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--text-dark);
+}
+
+.team-section {
+  padding: 60px 0;
+}
+
+.team-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  margin-bottom: 30px;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(37, 99, 235, 0.15);
+}
+
+.team-img {
+  height: 260px;
+  position: relative;
+  overflow: hidden;
+}
+
+.team-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.team-card:hover .team-img img {
+  transform: scale(1.05);
+}
+
+.team-content {
+  padding: 25px;
+  text-align: center;
+}
+
+.team-name {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: var(--text-dark);
+}
+
+.team-role {
+  color: var(--primary-blue);
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.team-social {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.social-link {
+  width: 35px;
+  height: 35px;
+  background: var(--light-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--primary-blue);
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background: var(--primary-blue);
+  color: white;
+  transform: translateY(-3px);
+}
+
+.mission-vision {
+  padding: 60px 0;
+  background: var(--light-blue);
+}
+
+.mission-box {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.mission-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(37, 99, 235, 0.1);
+}
+
+.mission-icon {
+  font-size: 2.5rem;
+  color: var(--primary-blue);
+  margin-bottom: 20px;
+}
+
+.stats-section {
+  padding: 80px 0;
+  background: linear-gradient(rgba(58, 108, 245, 0.9));
+  color: white;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+footer {
+  background: #3a6cf5;
+  color: white;
+  padding: 40px 0;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: #e6f0ff;
+}
+
+.social-icon {
+  display: inline-block;
+  margin-right: 15px;
+  font-size: 1.5rem;
+}
