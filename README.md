@@ -46,11 +46,10 @@ This project provides a web-based solution to help patients easily access health
 
 2. Create a database  
    - Open phpMyAdmin or any MySQL tool  
-   - Create a database named: `health_care`
+   - Create a database named: `health care`
 
 3. Import the database  
    - Import the SQL file provided in the project  
-     (`health care.sql`)
 
 4. Configure database connection  
    - Open `db_config.php`  
