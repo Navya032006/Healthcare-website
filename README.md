@@ -79,6 +79,8 @@ This project provides a web-based solution to help patients easily access health
 
 <img width="1869" height="889" alt="Screenshot 2026-01-01 163943" src="https://github.com/user-attachments/assets/f067baec-9187-44ba-8fb7-a4b4b5573085" />
 
+<img width="578" height="917" alt="Screenshot 2026-01-01 165453" src="https://github.com/user-attachments/assets/d8405d6f-81d7-4bd3-8ef9-0f3e8ec97a96" />
+
 <img width="535" height="743" alt="Screenshot 2026-01-01 164118" src="https://github.com/user-attachments/assets/89ecade9-c21b-4f7f-8aa4-a283406d2077" />
 
 <img width="1879" height="906" alt="Screenshot 2026-01-01 164148" src="https://github.com/user-attachments/assets/50304410-86ab-4bf4-be2a-6d4b98480dfd" />
